@@ -24,7 +24,7 @@ const TransactionModal = ({ isOpen, onClose, onSubmit }) => {
       ...formData,
       type: activeTab,
       amount: parseFloat(formData.amount),
-      datetime: new Date(`${formData.date}T${formData.time}`)
+      datetime: new Date(`${formData.date}T${formData.time}:00.000Z`).toISOString()
     };
     onSubmit(transaction);
     setFormData({
